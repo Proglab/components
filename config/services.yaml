@@ -1,0 +1,6 @@
+services:
+  Proglab\Components\Components\Atoms\Button:
+    class: Proglab\Components\Components\Atoms\Button
+    public: true
+    autoconfigure: true
+    autowire: true

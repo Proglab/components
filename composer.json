@@ -1,0 +1,29 @@
+{
+  "name": "proglab/components",
+  "description": "Some basics components",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "process-timeout": 0
+  },
+  "require": {
+    "symfony/framework-bundle": "6.3.*",
+    "symfony/options-resolver": "^6.3",
+    "symfony/twig-bundle": "6.3.*",
+    "symfony/ux-live-component": "^2.9",
+    "symfony/ux-twig-component": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Proglab\\Components\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Fabrice Gyre",
+      "email": "info@proglab.com"
+    }
+  ]
+}
