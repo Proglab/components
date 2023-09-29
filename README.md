@@ -24,29 +24,31 @@ Install with composer
 #### Button
 
 ```twig
-  {{ component('proglab_button', {
-          type: 'success',
-          label: 'Ceci est un bouton 3'
-      }) 
-  }}
+{{ component('proglab_button', {
+    style: 'primary',
+    type: 'button',
+    label: 'This is a button 2',
+    size: null,
+    disabled: false,
+    class: null
+}) }}
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `type` | `string` | **Required**.<br> **Accepted Values** : 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link' |
-| `label` | `string` | **Required**.|
-| `size` | `?string` | **Accepted Values** : 'sm', 'gd', null |
-| `disabled` | `bool` | **Accepted Values** : true, false |
+| Parameter  | Type      | Description                                                                                                   |
+|:-----------|:----------|:--------------------------------------------------------------------------------------------------------------|
+| `style`    | `string`  | **Accepted Values** : 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link' |
+| `type`     | `string`  | **Accepted Values** : 'button', 'submit', 'reset' <br> **Default Values** : button                            |
+| `label`    | `string`  | **Required**                                                                                                  |
+| `size`     | `?string` | **Accepted Values** : 'sm', 'gd', null <br> **Default Values** : null                                         |
+| `disabled` | `bool`    | **Accepted Values** : true, false <br> **Default Values** : false                                             |
+| `class`    | `?string` |                                                                                                               |
 
 
 ## Usage/Examples
 
 ```twig
   {{ component('proglab_button', {
-          type: 'success',
-          label: 'Ceci est un bouton 3',
-          disabled: true,
-          size: 'lg'
+          label: 'Ceci est un bouton 3'
       }) 
   }}
 ```
