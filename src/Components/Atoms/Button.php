@@ -50,5 +50,6 @@ class Button
 
         $resolver->setAllowedValues('size', ['lg', 'sm', null]);
         $resolver->setAllowedValues('style', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link']);
+        $resolver->setAllowedValues('type', ['button', 'submit', 'reset']);
     }
 }

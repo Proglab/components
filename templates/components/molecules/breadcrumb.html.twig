@@ -1,0 +1,14 @@
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			{% if homepageUrl is not empty %}<a href="{{ homepageUrl }}">{% endif %}{{homepageLabel|raw}}{% if homepageUrl is not empty %}</a>{% endif %}
+		</li>
+		{% for page in pages %}
+			<li class="breadcrumb-item">
+				{% if page.url is defined %}<a href="{{ page.url }}">{% endif %}
+					{{ page.title }}
+				{% if page.url is defined %}</a>{% endif %}
+			</li>
+		{% endfor %}
+	</ol>
+</nav>

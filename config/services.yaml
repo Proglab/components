@@ -4,3 +4,8 @@ services:
     public: true
     autoconfigure: true
     autowire: true
+  Proglab\Components\Components\Molecules\Breadcrumb:
+    class: Proglab\Components\Components\Molecules\Breadcrumb
+    public: true
+    autoconfigure: true
+    autowire: true
