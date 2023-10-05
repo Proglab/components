@@ -19,58 +19,31 @@ Install with composer
 
 ## Documentation
 
-### Atomics
+https://proglab.github.io/components/
 
-#### Button
+## How to update the docs ?
 
-```twig
-{{ component('proglab_button', {
-    style: 'primary',
-    type: 'button',
-    label: 'This is a button 2',
-    size: null,
-    disabled: false,
-    class: null
-}) }}
+The doc is generated with docusaurus.
+
+You must install npm dependencies
+
+```batch
+cd docs
+npm install
 ```
 
-| Parameter  | Type      | Description                                                                                                   |
-|:-----------|:----------|:--------------------------------------------------------------------------------------------------------------|
-| `style`    | `string`  | **Accepted Values** : 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link' |
-| `type`     | `string`  | **Accepted Values** : 'button', 'submit', 'reset' <br> **Default Values** : button                            |
-| `label`    | `string`  | **Required**                                                                                                  |
-| `size`     | `?string` | **Accepted Values** : 'sm', 'gd', null <br> **Default Values** : null                                         |
-| `disabled` | `bool`    | **Accepted Values** : true, false <br> **Default Values** : false                                             |
-| `class`    | `?string` |                                                                                                               |
+Go to the **docs directory** and run the dev server :
 
-
-## Usage/Examples
-
-```twig
-  {{ component('proglab_button', {
-          label: 'Ceci est un bouton 3'
-      }) 
-  }}
+```batch
+cd docs
+npx docusaurus start
 ```
 
-## How to overide any templates :
+After update it, run the site generator :
 
-- Create a `bundles/ProglabComponentsBundle/` directory in your template directory
-- Copy/paste the original file (for exemple the `templates/components/atoms/button.html.twig` to your `templates/bundles/ProglabComponentsBundle/components/atoms/button.html.twig`)
-- Update it with your own twig code
 
-## How to overide any components :
-
-- Create a `src/Components/Button.php` file
-- Extend from the Component of this bundle
-- Update your `config/services.yaml`
-
-```yml
-services:
-  Proglab\Components\Components\Atoms\Button:
-    class: App\Components\Button
-    public: true
-    autoconfigure: true
-    autowire: true
+```batch
+npx docusaurus build
 ```
-- You can do what you need
+
+and commit the updates.
