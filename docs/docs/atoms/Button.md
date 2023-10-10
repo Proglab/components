@@ -11,7 +11,9 @@ A simple button
     label: 'This is a button 2',
     size: null,
     disabled: false,
-    class: null
+    class: null,
+    icon_before: null,
+    icon_after: null,
 }) }}
 ```
 ## Parameters
@@ -26,6 +28,8 @@ A simple button
 | `size`        | `?string` | The size of the button | sm, gd, null                                                                    | null           |
 | `disabled`    | `bool`    |                        | true, false                                                                     | false          |
 | `class`       | `?string` |                        |                                                                                 | null           |
+| `icon_before` | `?string` | icon before the label  |                                                                                 | null           |
+| `icon_after`  | `?string` | icon after the label   |                                                                                 | null           |
 
 
 ## Usage/Examples

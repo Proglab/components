@@ -1,3 +1,9 @@
 <button {{ attributes.defaults({ class: 'btn' }) }}{% if disabled %} disabled{% endif %}>
+    {% if icon_before is not null %}
+        <i class="{{ icon_before }}"></i>
+    {% endif %}
     {{ label }}
+    {% if icon_after is not null %}
+         <i class="{{ icon_after }}"></i>
+    {% endif %}
 </button>
