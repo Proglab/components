@@ -20,7 +20,7 @@ class Carousel
     #[PreMount]
     public function preMount(array $data): array
     {
-        if (!isset($data['id'])) {
+        if (!isset($data['id']) || empty($data['id'])) {
             $data['id'] = $this->random_string(20);
         }
 

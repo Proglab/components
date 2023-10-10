@@ -24,7 +24,7 @@ A simple carousel
 
 | Parameter          | Type      | Description            | Default Values |
 |--------------------|-----------|------------------------|----------------|
-| `id`               | `string`  | **Required**           | null           |
+| `id`               | `string`  | The id of the carousel | null           |
 | `images`           | `array`   | Images (see next)      | null           |
 | `with_controls`    | `bool`    | See controls           | false          |
 | `control_next`     | `?string` | The label for next     | 'Next'         |
