@@ -14,3 +14,8 @@ services:
     public: true
     autoconfigure: true
     autowire: true
+  Proglab\Components\Components\Organisms\Carousel:
+    class: Proglab\Components\Components\Organisms\Carousel
+    public: true
+    autoconfigure: true
+    autowire: true
