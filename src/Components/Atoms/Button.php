@@ -12,6 +12,8 @@ class Button
     public ?String $size = null;
     public bool $disabled = false;
     public string $label;
+    public ?string $icon_before;
+    public ?string $icon_after;
 
     #[PreMount]
     public function preMount(array $data): array
@@ -40,13 +42,15 @@ class Button
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['style' => 'primary', 'size' => null, 'disabled' => false, 'type' => 'button', 'class' => null]);
+        $resolver->setDefaults(['style' => 'primary', 'size' => null, 'disabled' => false, 'type' => 'button', 'class' => null, 'icon_before' => null, 'icon_after' => null]);
         $resolver->setRequired(['label', 'type']);
 
         $resolver->setAllowedTypes('label', 'string');
         $resolver->setAllowedTypes('type', 'string');
         $resolver->setAllowedTypes('size', ['null', 'string']);
         $resolver->setAllowedTypes('disabled', 'bool');
+        $resolver->setAllowedTypes('icon_before', ['null', 'string']);
+        $resolver->setAllowedTypes('icon_after', ['null', 'string']);
 
         $resolver->setAllowedValues('size', ['lg', 'sm', null]);
         $resolver->setAllowedValues('style', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link']);
