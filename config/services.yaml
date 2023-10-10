@@ -9,3 +9,8 @@ services:
     public: true
     autoconfigure: true
     autowire: true
+  Proglab\Components\Components\Molecules\Alert:
+    class: Proglab\Components\Components\Molecules\Alert
+    public: true
+    autoconfigure: true
+    autowire: true
