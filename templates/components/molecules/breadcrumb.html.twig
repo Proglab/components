@@ -1,14 +1,24 @@
 <nav aria-label="breadcrumb">
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item">
-			{% if homepageUrl is not empty %}<a href="{{ homepageUrl }}">{% endif %}{{homepageLabel|raw}}{% if homepageUrl is not empty %}</a>{% endif %}
+	<ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+		<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+			{% if homepageUrl is not empty %}
+				<a href="{{ homepageUrl }}" itemprop="item" title="{{ homepageLabel|striptags }}"><span itemprop="name">{{ homepageLabel|raw }}</span></a>
+			{% else %}
+				<span itemprop="name">{{ homepageLabel|raw }}</span>
+			{% endif %}
+			<meta itemprop="position" content="1">
 		</li>
+		{% set meta = 2 %}
 		{% for page in pages %}
-			<li class="breadcrumb-item">
-				{% if page.url is defined %}<a href="{{ page.url }}">{% endif %}
-					{{ page.title }}
-				{% if page.url is defined %}</a>{% endif %}
+			<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+				{% if page.url is defined %}
+					<a href="{{ page.url }}" itemprop="item title="{{ page.title|striptags }}"><span itemprop="name">{{ page.title|raw }}</span></a>
+				{% else %}
+					<span itemprop="name">{{ page.title }}</span>
+				{% endif %}
 			</li>
+			<meta itemprop="position" content="{{ meta }}">
+			{% set meta = meta + 1 %}
 		{% endfor %}
 	</ol>
 </nav>
