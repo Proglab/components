@@ -19,3 +19,13 @@ services:
     public: true
     autoconfigure: true
     autowire: true
+  Proglab\Components\Components\Organisms\CarouselDto:
+    class: Proglab\Components\Components\Organisms\CarouselDto
+    public: true
+    autoconfigure: true
+    autowire: true
+  Proglab\Components\Service\CarouselServiceAbstract:
+    class: Proglab\Components\Service\CarouselServiceAbstract
+    public: true
+    autoconfigure: true
+    autowire: true
