@@ -6,7 +6,6 @@ sidebar_position: 1
 ## Introduction
 
 Some twig components in the style of atomic design
-![Bouton](./images/atomic_design.png)
 
 ## Install
 

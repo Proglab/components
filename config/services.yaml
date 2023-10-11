@@ -1,31 +1,31 @@
 services:
-  Proglab\Components\Components\Atoms\Button:
-    class: Proglab\Components\Components\Atoms\Button
+  Proglab\Components\Components\Button\Button:
+    class: Proglab\Components\Components\Button\Button
     public: true
     autoconfigure: true
     autowire: true
-  Proglab\Components\Components\Molecules\Breadcrumb:
-    class: Proglab\Components\Components\Molecules\Breadcrumb
+  Proglab\Components\Components\Breadcrumb\Breadcrumb:
+    class: Proglab\Components\Components\Breadcrumb\Breadcrumb
     public: true
     autoconfigure: true
     autowire: true
-  Proglab\Components\Components\Molecules\Alert:
-    class: Proglab\Components\Components\Molecules\Alert
+  Proglab\Components\Components\Alert\Alert:
+    class: Proglab\Components\Components\Alert\Alert
     public: true
     autoconfigure: true
     autowire: true
-  Proglab\Components\Components\Organisms\Carousel:
-    class: Proglab\Components\Components\Organisms\Carousel
+  Proglab\Components\Components\Carousel\Carousel:
+    class: Proglab\Components\Components\Carousel\Carousel
     public: true
     autoconfigure: true
     autowire: true
-  Proglab\Components\Components\Organisms\CarouselDto:
-    class: Proglab\Components\Components\Organisms\CarouselDto
+  Proglab\Components\Components\CarouselDto\CarouselDto:
+    class: Proglab\Components\Components\CarouselDto\CarouselDto
     public: true
     autoconfigure: true
     autowire: true
-  Proglab\Components\Service\CarouselServiceAbstract:
-    class: Proglab\Components\Service\CarouselServiceAbstract
+  Proglab\Components\Components\CarouselDto\Service\CarouselServiceAbstract:
+    class: Proglab\Components\Components\CarouselDto\Service\CarouselServiceAbstract
     public: true
     autoconfigure: true
     autowire: true
