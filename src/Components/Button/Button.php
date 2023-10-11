@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Proglab\Components\Components\Button;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 #[AsTwigComponent('proglab_button', template: '@ProglabComponents/components/button/button.html.twig')]
 class Button
@@ -27,16 +30,17 @@ class Button
         }
 
         if (!empty($data['style'])) {
-            $data['class'] .= ' btn-'.$data['style'];
+            $data['class'] .= ' btn-' . $data['style'];
         } else {
             $data['class'] .= ' btn-primary';
         }
 
         if (!empty($data['size'])) {
-            $data['class'] .= ' btn-'.$data['size'];
+            $data['class'] .= ' btn-' . $data['size'];
         }
 
         $data['class'] = trim($data['class']);
+
         return $data;
     }
 

@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Proglab\Components\Components\CarouselDto\Dto;
 
-use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Image
@@ -15,16 +16,14 @@ class Image
         $this->url = $url;
     }
 
-    public static function createFrom(array|object $data)
+    public static function createFrom(array|object $data): self
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             return new self($data['url'], $data['alt'] ?? null, $data['interval'] ?? null, $data['caption'] ?? null);
         }
 
-        if (is_object($data)) {
+        if (\is_object($data)) {
             return new self($data->url, $data->alt ?? null, $data->interval ?? null, $data->caption ?? null);
         }
-
-        throw new InvalidTypeException('you must pass an object or an array');
     }
 }

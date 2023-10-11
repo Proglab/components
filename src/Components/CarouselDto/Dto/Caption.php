@@ -1,8 +1,8 @@
 <?php
 
-namespace Proglab\Components\Components\CarouselDto\Dto;
+declare(strict_types=1);
 
-use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
+namespace Proglab\Components\Components\CarouselDto\Dto;
 
 class Caption
 {
@@ -10,16 +10,14 @@ class Caption
     {
     }
 
-    public static function createFrom(array|object $data)
+    public static function createFrom(array|object $data): self
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             return new self($data['title'] ?? null, $data['text'] ?? null);
         }
 
-        if (is_object($data)) {
+        if (\is_object($data)) {
             return new self($data->title ?? null, $data->text ?? null);
         }
-
-        throw new InvalidTypeException('you must pass an object or an array');
     }
 }

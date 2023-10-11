@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Proglab\Components\Components\Alert;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 #[AsTwigComponent('proglab_alert', template: '@ProglabComponents/components/alert/alert.html.twig')]
 class Alert
@@ -24,7 +27,7 @@ class Alert
         }
 
         if (!empty($data['style'])) {
-            $data['class'] .= ' alert-'.$data['style'];
+            $data['class'] .= ' alert-' . $data['style'];
         } else {
             $data['class'] .= ' alert-primary';
         }
@@ -34,6 +37,7 @@ class Alert
         }
 
         $data['class'] = trim($data['class']);
+
         return $data;
     }
 

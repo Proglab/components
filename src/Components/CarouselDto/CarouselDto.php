@@ -1,13 +1,15 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Proglab\Components\Components\CarouselDto;
 
 use Proglab\Components\Components\CarouselDto\Service\CarouselServiceAbstract;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
-use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 #[AsTwigComponent('proglab_carousel_dto', template: '@ProglabComponents/components/carousel_dto/carousel_dto.html.twig')]
 class CarouselDto
@@ -20,10 +22,9 @@ class CarouselDto
     public bool $fade = false;
     public bool $dark = false;
 
-
     public function __construct(protected CarouselServiceAbstract $carouselService, protected ValidatorInterface $validator)
-    {}
-
+    {
+    }
 
     #[PreMount]
     public function preMount(array $data): array
@@ -62,25 +63,26 @@ class CarouselDto
         $resolver->setAllowedTypes('id', ['null', 'string']);
     }
 
-    protected function random_string($length)
-    {
-        $key = '';
-        $keys = array_merge(range('A', 'Z'), range('a', 'z'));
-
-        for ($i = 0; $i < $length; $i++) {
-            $key .= $keys[array_rand($keys)];
-        }
-
-        return $key;
-    }
-
     public function getImages(): array
     {
         $images = $this->carouselService->findAll();
         $errors = $this->validator->validate($images);
-        if (count($errors) > 0) {
-            throw new InvalidParameterException($errors->get(0)->getMessage().' : '.$errors->get(0)->getInvalidValue(). ' on '.$errors->get(0)->getPropertyPath(), null);
+        if (\count($errors) > 0) {
+            throw new InvalidParameterException($errors->get(0)->getMessage() . ' : ' . $errors->get(0)->getInvalidValue() . ' on ' . $errors->get(0)->getPropertyPath());
         }
+
         return $images;
+    }
+
+    protected function random_string(int $length): string
+    {
+        $key = '';
+        $keys = array_merge(range('A', 'Z'), range('a', 'z'));
+
+        for ($i = 0; $i < $length; ++$i) {
+            $key .= $keys[array_rand($keys)];
+        }
+
+        return $key;
     }
 }

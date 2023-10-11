@@ -1,0 +1,10 @@
+parameters:
+    paths:
+        - bin/console
+        - config/
+        - public/index.php
+        - src/
+        - tests/
+    level: 6
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false

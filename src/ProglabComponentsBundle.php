@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Proglab\Components;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class ProglabComponentsBundle extends AbstractBundle
 {

@@ -15,12 +15,12 @@ final class Breadcrumb
     public ?string $homepageUrl = null;
     public string $homepageLabel = 'Homepage';
 
-
     #[PreMount]
     public function preMount(array $data): array
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
+
         return $resolver->resolve($data);
     }
 

@@ -3,7 +3,7 @@ name: CI (Php Stan + PHP-CS-FIXER + security-checker)
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 

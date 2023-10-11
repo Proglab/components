@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Proglab\Components\Components\Carousel;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 #[AsTwigComponent('proglab_carousel', template: '@ProglabComponents/components/carousel/carousel.html.twig')]
 class Carousel
@@ -57,15 +60,15 @@ class Carousel
         $resolver->setAllowedTypes('id', ['null', 'string']);
     }
 
-    protected function random_string($length) {
+    protected function random_string(int $length): string
+    {
         $key = '';
         $keys = array_merge(range('A', 'Z'), range('a', 'z'));
 
-        for ($i = 0; $i < $length; $i++) {
+        for ($i = 0; $i < $length; ++$i) {
             $key .= $keys[array_rand($keys)];
         }
 
         return $key;
     }
-
 }
