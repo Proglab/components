@@ -45,8 +45,9 @@ class CarouselDto
             $data['class'] .= ' carousel-fade';
         }
 
-        $data['class'] = trim($data['class']);
-
+        if (!empty($data['class'])) {
+            $data['class'] = trim($data['class']);
+        }
         return $data;
     }
 
