@@ -48,6 +48,7 @@ class CarouselDto
         if (!empty($data['class'])) {
             $data['class'] = trim($data['class']);
         }
+
         return $data;
     }
 
