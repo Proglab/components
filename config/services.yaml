@@ -29,3 +29,8 @@ services:
     public: true
     autoconfigure: true
     autowire: true
+  Proglab\Components\Components\Modal\Modal:
+    class: Proglab\Components\Components\Modal\Modal
+    public: true
+    autoconfigure: true
+    autowire: true
