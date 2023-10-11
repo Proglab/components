@@ -12,7 +12,7 @@ use Symfony\UX\TwigComponent\Attribute\PreMount;
 class Button
 {
     public string $style;
-    public ?String $size = null;
+    public ?string $size = null;
     public bool $disabled = false;
     public string $label;
     public ?string $icon_before;
