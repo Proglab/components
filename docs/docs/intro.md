@@ -5,7 +5,11 @@ sidebar_position: 1
 
 ## Introduction
 
-Some twig components in the style of atomic design
+Some twig components in the style of atomic design 
+
+## Repository
+
+https://github.com/Proglab/components
 
 ## Install
 
