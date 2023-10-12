@@ -13,7 +13,7 @@ class Alert
 {
     public string $style;
     public string $text;
-    public bool $dismissing = false;
+    public bool $dismissable = false;
 
     #[PreMount]
     public function preMount(array $data): array
@@ -32,7 +32,7 @@ class Alert
             $data['class'] .= ' alert-primary';
         }
 
-        if ($data['dismissing']) {
+        if ($data['dismissable']) {
             $data['class'] .= ' alert-dismissible fade show';
         }
 
