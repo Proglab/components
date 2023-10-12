@@ -8,18 +8,18 @@ A simple bootstrap alert
 {{ component('proglab_alert', {
     style: 'success',
     text: 'Ceci est une alerte',
-    dismissing: true,
+    dismissable: true,
     class: 'text-center'
 }) }}
 ```
 ## Parameters
 
-| Parameter    | Type      | Description         | Default Values |
-|:-------------|:----------|:--------------------|----------------|
-| `text`       | `string`  | **Required**        |                |
-| `style`      | `?string` | The bootstrap style | primary        |
-| `dismissing` | `?string` | X button to dismiss | false          |
-| `class`      | `?string` | Other class         | null           |
+| Parameter     | Type      | Description         | Default Values |
+|:--------------|:----------|:--------------------|----------------|
+| `text`        | `string`  | **Required**        |                |
+| `style`       | `?string` | The bootstrap style | primary        |
+| `dismissable` | `?string` | X button to dismiss | false          |
+| `class`       | `?string` | Other class         | null           |
 
 
 ## Usage/Examples
