@@ -1,6 +1,6 @@
 ## Description
 
-A simple carousel
+A simple carousel with a service facilitating data recovery, no matter where it comes from (FTP, Database, API, etc.)
 
 ![Breadcrumb](images/carousel.jpg)
 
